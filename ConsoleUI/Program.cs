@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleUI
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+﻿
+        
             /*
              * Todo: Follow all comments!! 
              * Double click on the region (gray box) to view all comments
              */
 
-            #region Vehicles
+            
 
             /*
              * Create an abstract class called Vehicle
@@ -47,8 +37,46 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+           
+   
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        
+        List<Vehicle> vehicles = new List<Vehicle>();
+
+        
+        Car car = new Car { Year = "2022", Make = "Toyota", Model = "Camry", HasTrunk = true };
+        Motorcycle motorcycle = new Motorcycle { Year = "2021", Make = "Harley Davidson", Model = "Sportster", HasSideCart = false };
+        Vehicle vehicle1 = new Car { Year = "2020", Make = "Honda", Model = "Accord", HasTrunk = true };
+        Vehicle vehicle2 = new Motorcycle { Year = "2019", Make = "Yamaha", Model = "YZF-R6", HasSideCart = false };
+
+       
+        vehicles.Add(car);
+        vehicles.Add(motorcycle);
+        vehicles.Add(vehicle1);
+        vehicles.Add(vehicle2);
+
+        
+        foreach (var vehicle in vehicles)
+        {
+            Console.WriteLine($"Year: {vehicle.Year}, Make: {vehicle.Make}, Model: {vehicle.Model}");
+
+            
+            vehicle.DriveAbstract();
+
+            
+            vehicle.DriveVirtual();
+
+            Console.WriteLine(); 
+
+           
             Console.ReadLine();
         }
+
     }
 }
